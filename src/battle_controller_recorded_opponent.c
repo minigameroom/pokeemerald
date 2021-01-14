@@ -29,7 +29,7 @@
 #include "constants/songs.h"
 #include "constants/trainers.h"
 
-extern struct MusicPlayerInfo gMPlayInfo_BGM;
+extern struct MusicPlayerInfo gMPlayInfo_BattleBGM;
 
 // this file's functions
 static void RecordedOpponentHandleGetMonData(void);
@@ -297,11 +297,11 @@ static void sub_818686C(void)
             if (gBattleTypeFlags & BATTLE_TYPE_MULTI && gBattleTypeFlags & BATTLE_TYPE_LINK)
             {
                 if (GetBattlerPosition(gActiveBattler) == B_POSITION_OPPONENT_LEFT)
-                    m4aMPlayContinue(&gMPlayInfo_BGM);
+                    m4aMPlayContinue(&gMPlayInfo_BattleBGM);
             }
             else
             {
-                m4aMPlayVolumeControl(&gMPlayInfo_BGM, 0xFFFF, 0x100);
+                m4aMPlayVolumeControl(&gMPlayInfo_BattleBGM, 0xFFFF, 0x100);
             }
         }
         gBattleSpritesDataPtr->healthBoxesData[gActiveBattler].field_1_x20 = 1;
@@ -450,7 +450,7 @@ static void sub_8186F14(void)
         if (gSprites[gBattlerSpriteIds[gActiveBattler]].callback == SpriteCallbackDummy
             || gSprites[gBattlerSpriteIds[gActiveBattler]].callback == SpriteCallbackDummy_2)
         {
-            m4aMPlayVolumeControl(&gMPlayInfo_BGM, 0xFFFF, 0x100);
+            m4aMPlayVolumeControl(&gMPlayInfo_BattleBGM, 0xFFFF, 0x100);
             RecordedOpponentBufferExecCompleted();
         }
     }

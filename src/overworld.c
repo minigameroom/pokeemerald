@@ -1145,7 +1145,7 @@ void Overworld_PlaySpecialMapMusic(void)
     }
 
     if (music != GetCurrentMapMusic())
-        PlayNewMapMusic(music);
+        m4aSongNumStartOrContinue(music);
 }
 
 void Overworld_SetSavedMusic(u16 songNum)

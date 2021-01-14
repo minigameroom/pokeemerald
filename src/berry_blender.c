@@ -2146,9 +2146,9 @@ static void UpdateOpponentScores(void)
             #endif
             {
                 if (sBerryBlender->speed > 1500)
-                    m4aMPlayTempoControl(&gMPlayInfo_BGM, ((sBerryBlender->speed - 750) / 20) + 256);
+                    m4aMPlayTempoControl(&gMPlayInfo_FieldBGM, ((sBerryBlender->speed - 750) / 20) + 256);
                 else
-                    m4aMPlayTempoControl(&gMPlayInfo_BGM, 256);
+                    m4aMPlayTempoControl(&gMPlayInfo_FieldBGM, 256);
             }
         }
     }
@@ -2567,7 +2567,7 @@ static void CB2_EndBlenderGame(void)
     switch (sBerryBlender->gameEndState)
     {
     case 1:
-        m4aMPlayTempoControl(&gMPlayInfo_BGM, 256);
+        m4aMPlayTempoControl(&gMPlayInfo_FieldBGM, 256);
         for (i = 0; i < gSpecialVar_0x8004; i++)
         {
             DestroyTask(sBerryBlender->opponentTaskIds[i]);

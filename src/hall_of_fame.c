@@ -64,7 +64,7 @@ static EWRAM_DATA u32 sHofFadePalettes = 0;
 static EWRAM_DATA struct HallofFameTeam *sHofMonPtr = NULL;
 static EWRAM_DATA struct HofGfx *sHofGfxPtr = NULL;
 
-extern struct MusicPlayerInfo gMPlayInfo_BGM;
+extern struct MusicPlayerInfo gMPlayInfo_FieldBGM;
 
 // this file's functions
 static void ClearVramOamPltt_LoadHofPal(void);
@@ -1014,7 +1014,7 @@ static void Task_HofPC_HandleInput(u8 taskId)
             if (IsCryPlayingOrClearCrySongs())
             {
                 StopCryAndClearCrySongs();
-                m4aMPlayVolumeControl(&gMPlayInfo_BGM, 0xFFFF, 0x100);
+                m4aMPlayVolumeControl(&gMPlayInfo_FieldBGM, 0xFFFF, 0x100);
             }
             gTasks[taskId].func = Task_HofPC_HandlePaletteOnExit;
         }
@@ -1024,7 +1024,7 @@ static void Task_HofPC_HandleInput(u8 taskId)
         if (IsCryPlayingOrClearCrySongs())
         {
             StopCryAndClearCrySongs();
-            m4aMPlayVolumeControl(&gMPlayInfo_BGM, 0xFFFF, 0x100);
+            m4aMPlayVolumeControl(&gMPlayInfo_FieldBGM, 0xFFFF, 0x100);
         }
         gTasks[taskId].func = Task_HofPC_HandlePaletteOnExit;
     }

@@ -324,7 +324,7 @@ void UpdateCryWaveformWindow(u8 windowId)
 
 void CryScreenPlayButton(u16 species)
 {
-    if (gMPlayInfo_BGM.status & MUSICPLAYER_STATUS_PAUSE && !sDexCryScreen->cryOverrideCountdown)
+    if (gMPlayInfo_FieldBGM.status & MUSICPLAYER_STATUS_PAUSE && !sDexCryScreen->cryOverrideCountdown)
     {
         if (!sDexCryScreen->cryRepeatDelay)
         {

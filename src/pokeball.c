@@ -14,7 +14,7 @@
 #include "util.h"
 #include "constants/songs.h"
 
-extern struct MusicPlayerInfo gMPlayInfo_BGM;
+extern struct MusicPlayerInfo gMPlayInfo_BattleBGM;
 
 // this file's functions
 static void Task_DoPokeballSendOutAnim(u8 taskId);
@@ -768,11 +768,11 @@ static void SpriteCB_ReleaseMonFromBall(struct Sprite *sprite)
             if (gBattleTypeFlags & BATTLE_TYPE_MULTI && gBattleTypeFlags & BATTLE_TYPE_LINK)
             {
                 if (IsBGMPlaying())
-                    m4aMPlayStop(&gMPlayInfo_BGM);
+                    m4aMPlayStop(&gMPlayInfo_BattleBGM);
             }
             else
             {
-                m4aMPlayVolumeControl(&gMPlayInfo_BGM, 0xFFFF, 128);
+                m4aMPlayVolumeControl(&gMPlayInfo_BattleBGM, 0xFFFF, 128);
             }
         }
 

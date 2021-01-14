@@ -1484,7 +1484,7 @@ static void CloseSummaryScreen(u8 taskId)
         ResetSpriteData();
         FreeAllSpritePalettes();
         StopCryAndClearCrySongs();
-        m4aMPlayVolumeControl(&gMPlayInfo_BGM, 0xFFFF, 0x100);
+        m4aMPlayVolumeControl(&gMPlayInfo_FieldBGM, 0xFFFF, 0x100);
         if (gMonSpritesGfxPtr == NULL)
             sub_806F47C(0);
         FreeSummaryScreen();

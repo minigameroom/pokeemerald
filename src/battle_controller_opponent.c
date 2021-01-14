@@ -34,7 +34,7 @@
 #include "constants/trainers.h"
 #include "trainer_hill.h"
 
-extern struct MusicPlayerInfo gMPlayInfo_BGM;
+extern struct MusicPlayerInfo gMPlayInfo_BattleBGM;
 
 // this file's functions
 static void OpponentHandleGetMonData(void);
@@ -331,10 +331,10 @@ static void sub_805F560(void)
             if (gBattleTypeFlags & BATTLE_TYPE_MULTI && gBattleTypeFlags & BATTLE_TYPE_LINK)
             {
                 if (GetBattlerPosition(gActiveBattler) == 1)
-                    m4aMPlayContinue(&gMPlayInfo_BGM);
+                    m4aMPlayContinue(&gMPlayInfo_BattleBGM);
             }
             else
-                m4aMPlayVolumeControl(&gMPlayInfo_BGM, 0xFFFF, 0x100);
+                m4aMPlayVolumeControl(&gMPlayInfo_BattleBGM, 0xFFFF, 0x100);
         }
         gBattleSpritesDataPtr->healthBoxesData[gActiveBattler].field_1_x20 = 1;
         sp = TRUE;
@@ -469,7 +469,7 @@ static void sub_805FC80(void)
     {
         if (gSprites[gBattlerSpriteIds[gActiveBattler]].callback == SpriteCallbackDummy || gSprites[gBattlerSpriteIds[gActiveBattler]].callback == SpriteCallbackDummy_2)
         {
-            m4aMPlayVolumeControl(&gMPlayInfo_BGM, 0xFFFF, 0x100);
+            m4aMPlayVolumeControl(&gMPlayInfo_BattleBGM, 0xFFFF, 0x100);
             OpponentBufferExecCompleted();
         }
     }

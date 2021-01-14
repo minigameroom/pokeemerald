@@ -53,7 +53,7 @@
 #include "data.h"
 #include "constants/party_menu.h"
 
-extern struct MusicPlayerInfo gMPlayInfo_BGM;
+extern struct MusicPlayerInfo gMPlayInfo_BattleBGM;
 
 extern const u8* const gBattleScriptsForMoveEffects[];
 
@@ -6403,10 +6403,10 @@ static void Cmd_various(void)
         }
         break;
     case VARIOUS_VOLUME_DOWN:
-        m4aMPlayVolumeControl(&gMPlayInfo_BGM, 0xFFFF, 0x55);
+        m4aMPlayVolumeControl(&gMPlayInfo_BattleBGM, 0xFFFF, 0x55);
         break;
     case VARIOUS_VOLUME_UP:
-        m4aMPlayVolumeControl(&gMPlayInfo_BGM, 0xFFFF, 0x100);
+        m4aMPlayVolumeControl(&gMPlayInfo_BattleBGM, 0xFFFF, 0x100);
         break;
     case VARIOUS_SET_ALREADY_STATUS_MOVE_ATTEMPT:
         gBattleStruct->alreadyStatusedMoveAttempt |= gBitTable[gActiveBattler];
