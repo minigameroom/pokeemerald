@@ -2477,14 +2477,15 @@ gUnknown_03001300:
     .space 0x40
     .size gUnknown_03001300, .-gUnknown_03001300
 
+	.section ewram_data
     .global gMPlayTrack_FieldBGM
 gMPlayTrack_FieldBGM:
-    .space 0x320
+    .space 0x500
     .size gMPlayTrack_FieldBGM, .-gMPlayTrack_FieldBGM
 	
     .global gMPlayTrack_BattleBGM
 gMPlayTrack_BattleBGM:
-    .space 0x320
+    .space 0x500
     .size gMPlayTrack_BattleBGM, .-gMPlayTrack_BattleBGM
 
     .global gMPlayTrack_SE1
